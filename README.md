@@ -141,3 +141,25 @@ public:
 ```
 
 Nothing more, nothing less. Our `Drawable` object passes itself as a parameter to the right `RenderTarget`'s member function. This function is therefore capable to draw a sprite using SFML's native handles (sf::Sprite and sf::Texture) by retrieving all the information it needs from our `Sprite` class.
+
+# Highscores
+
+Now that we have both our game and renderer functional, it would be nice if we could load and save highscores for each games we have.
+
+Back in our game loop, we can have something like that :
+
+```cpp
+// Load your highscores
+Game::Scores scores{ /* ... */ };
+
+game->loadHighscores(scores);
+
+while (window->isOpen()) {
+	// ...
+}
+
+scores = game->highscores();
+// Then save them
+```
+
+Here, `Game::Scores` is a `std::map<std::uint64_t, std::string>`.
