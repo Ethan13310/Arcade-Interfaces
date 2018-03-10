@@ -19,7 +19,7 @@ std::unique_ptr<engine::Window> window{ /* Window */ };
 Then we create a window with a render resolution of 640x480px :
 
 ```cpp
-window->create("Arcade", engine::RenderSettings{ 640, 480, false });
+window->create("Arcade", engine::Vector2i{ 640, 480 }, engine::RenderSettings{ 640, 480, false });
 ```
 
 ### Main loop
