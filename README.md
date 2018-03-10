@@ -144,7 +144,7 @@ Nothing more, nothing less. Our `Drawable` object passes itself as a parameter t
 
 # Highscores
 
-Now that we have both our game and renderer functional, it would be nice if we could load and save highscores for each games we have.
+Now that we have both our game and renderer functional, it would be nice if we could load and save highscores for each game we have.
 
 Back in our game loop, we can have something like that :
 
