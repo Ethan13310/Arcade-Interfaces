@@ -50,6 +50,12 @@ namespace engine
 		void setSize(std::size_t size);
 
 		/**
+		* \brief Set the sprite rotation.
+		* \param std::size_t rotation
+		*/
+		void setRotation(float rotation);
+
+		/**
 		 * \brief Get the image file path.
 		 * \return std::string
 		 */
@@ -66,5 +72,11 @@ namespace engine
 		 * \return std::size_t
 		 */
 		std::size_t getSize() const;
+
+		/**
+		* \brief Get the sprite rotation.
+		* \return float
+		*/
+		float getRotation() const;
 	};
 }

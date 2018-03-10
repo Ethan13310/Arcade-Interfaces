@@ -7,6 +7,7 @@
 
 #pragma once
 
+#include <map>
 #include <memory>
 
 #include "Engine/System/Event.hpp"
@@ -17,6 +18,8 @@ namespace arcade
 	class Game
 	{
 	public:
+		using Scores = std::map<std::uint64_t, std::string>;
+
 		Game() = default;
 		virtual ~Game() = default;
 
@@ -25,6 +28,20 @@ namespace arcade
 
 		Game &operator=(Game const &) = delete;
 		Game &operator=(Game &&) = default;
+
+		/**
+		 * \brief Load the highscores into the game. If this function
+		 *        has already been called, current highscores must be
+		 *        erased.
+		 * \param Scores scores
+		 */
+		virtual void loadHighscores(Scores const &scores) = 0;
+
+		/**
+		 * \brief Get the current highscores.
+		 * \return Scores
+		 */
+		virtual Scores const &highscores() const = 0;
 
 		/**
 		 * \brief Handle event.
