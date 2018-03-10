@@ -8,7 +8,6 @@
 #pragma once
 
 #include "RenderTarget.hpp"
-#include "Vector.hpp"
 
 namespace engine
 {

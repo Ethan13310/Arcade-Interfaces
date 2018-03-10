@@ -130,7 +130,7 @@ private:
 We're talking about `Drawable` classes since earlier, but let's see how to implement their `draw()` member function :
 
 ```cpp
-class Sprite : public Drawable
+class Sprite : public Transformable, public Drawable
 {
 public:
 	void draw(RenderTarget &renderer) const override
@@ -141,9 +141,3 @@ public:
 ```
 
 Nothing more, nothing less. Our `Drawable` object passes itself as a parameter to the right `RenderTarget`'s member function. This function is therefore capable to draw a sprite using SFML's native handles (sf::Sprite and sf::Texture) by retrieving all the information it needs from our `Sprite` class.
-
-# What's next ?
-
-Since `Drawable` classes are shared between the game and the renderer, we have to create all the `Drawable` classes we need (for instance, `Sprite`, `Text`, etc.), keeping in mind that we deal with both graphical and terminal render engines. 
-
-Of course, these classes need to have a common interface.
