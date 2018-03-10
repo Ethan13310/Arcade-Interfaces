@@ -9,6 +9,7 @@
 
 #include <map>
 #include <memory>
+#include <string>
 
 #include "Engine/System/Event.hpp"
 #include "Engine/Window/Window.hpp"
@@ -92,7 +93,7 @@ namespace arcade
 
 		/**
 		 * \brief Draw each game object into the render window.
-		 * \param Window window
+		 * \param std::unique_ptr<Window> window
 		 */
 		virtual void render(std::unique_ptr<engine::Window> &window) const = 0;
 	};
