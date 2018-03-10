@@ -72,6 +72,12 @@ namespace arcade
 		virtual void quit() = 0;
 
 		/**
+		* \brief Restart the game. The game is not required to restart
+		*        instantly (eg. display a confirmation menu).
+		*/
+		virtual void restart() = 0;
+
+		/**
 		 * \brief Tell whether or not the game is paused.
 		 * \return bool
 		 */
