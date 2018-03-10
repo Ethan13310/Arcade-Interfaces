@@ -16,7 +16,7 @@
 
 namespace engine
 {
-	class Text : public Transformable, public Drawable
+	class Text final : public Transformable, public Drawable
 	{
 	public:
 		Text() = default;

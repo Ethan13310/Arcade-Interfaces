@@ -15,7 +15,7 @@
 
 namespace engine
 {
-	class Sprite : public Transformable, public Drawable
+	class Sprite final : public Transformable, public Drawable
 	{
 	public:
 		Sprite() = default;
