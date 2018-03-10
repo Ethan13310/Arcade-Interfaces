@@ -58,7 +58,7 @@ In the game loop above, you surely have noticed the line `game->render(window);`
 There's basically nothing much to do. We call the `Window::draw()` function with the object we want to render as a parameter :
 
 ```cpp
-class Pacman final : public Game
+class Pacman : public Game
 {
 public:
 	void draw(std::unique_ptr<engine::Window> &window) const override
@@ -91,7 +91,7 @@ public:
 	// ...
 };
 
-class SFMLRenderer final : public RenderTarget
+class SFMLRenderer : public RenderTarget
 {
 public:
 	void drawSprite(Sprite const &sprite) override {}
