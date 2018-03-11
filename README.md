@@ -1,4 +1,4 @@
-# The Game Loop
+# Game Loop
 
 Here we'll create a classic game loop :
 1. We handle all events that happened during the last frame,
@@ -49,7 +49,7 @@ while (window->isOpen()) {
 
 It's a very basic game loop. You'll have to make some changes, especially to handle render engines switches.
 
-# The Drawing
+# Drawing
 
 In the game loop above, you surely have noticed the line `game->render(window);`. Here, we pass as a reference the window to the game. It makes the game able to draw its components into the window.
 
@@ -75,7 +75,7 @@ private:
 };
 ```
 
-# The Rendering
+# Rendering
 
 Now, things are going to get a little bit more harder. We need to make the `Window::draw()` function able to render any `Drawable` object.
 
@@ -163,3 +163,7 @@ scores = game->highscores();
 ```
 
 Here, `Game::Scores` is a `std::map<std::uint64_t, std::string>`.
+
+# Events
+
+In order to comply with all render engines, it's recommended to make your games fully playable (including menus) with the keyboard.

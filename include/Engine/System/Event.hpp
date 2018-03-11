@@ -12,6 +12,7 @@
 
 #include "Keyboard.hpp"
 #include "Joystick.hpp"
+#include "Mouse.hpp"
 
 namespace engine
 {
@@ -20,62 +21,107 @@ namespace engine
 		// Invalid event
 		None,
 
-		// The OS has requested the program to close
+		// The OS requested the program to close
 		Closed,
 
-		// The window has been resized
+		// The window was resized
 		Resized,
 
-		// The window has lost focus
+		// The window lost focus
 		// Can be used to pause the game
 		LostFocus,
 
-		// The window has gained focus
+		// The window gained focus
 		GainedFocus,
 
-		// A printable key combinaison has been pressed
+		// A printable key combinaison was pressed
 		TextEntered,
 
-		// A key has been pressed or released
+		// A key was pressed or released
 		KeyPressed,
 		KeyReleased,
 
-		// A joystick button has been pressed
+		// The mouse moved across the window
+		MouseMoved,
+
+		// The mouse wheel was scrolled
+		MouseWheelScrolled,
+
+		// A mouse button was pressed or released
+		MouseButtonPressed,
+		MouseButtonReleased,
+
+		// A joystick button was pressed or released
 		JoystickButtonPressed,
 		JoystickButtonReleased,
 
-		// One of the joystick's axes has been moved
+		// One of the joystick's axes moved
 		JoystickMoved
 	};
 
 	struct KeyEvent final
 	{
 		KeyCode code;
+
 		bool alt;
 		bool control;
 		bool shift;
 		bool system;
 	};
 
-	struct JoystickButtonEvent final
+	struct MouseMoveEvent final
 	{
-		unsigned button;
+		// Position of the mouse pointer, relative to the window
+		// The top-left corner of the window is the point (0, 0)
+		std::int32_t x;
+		std::int32_t y;
+	};
+
+	struct MouseButtonEvent final
+	{
+		MouseButton button;
+
+		// Position of the mouse pointer, relative to the window
+		std::int32_t x;
+		std::int32_t y;
+	};
+
+
+	struct MouseWheelEvent final
+	{
+		// Number of ticks the wheel has moved
+		// Positive is up, negative is down
+		float delta;
+
+		// Position of the mouse pointer, relative to the window
+		std::int32_t x;
+		std::int32_t y;
 	};
 
 	struct JoystickMoveEvent final
 	{
 		JoystickAxis axis;
-		float poisition; // Interval: [-1.0, 1.0]
+
+		// Interval [-1.0, 1.0]
+		float poisition;
+	};
+
+	struct JoystickButtonEvent final
+	{
+		// Joystick button ID
+		unsigned button;
 	};
 
 	struct ResizeEvent final
 	{
+		// New window size
 		std::size_t width;
 		std::size_t height;
 	};
 
 	struct TextEvent final
 	{
+		// UTF-8 value of the character
 		std::uint32_t unicode;
 	};
 
