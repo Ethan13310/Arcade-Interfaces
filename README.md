@@ -166,4 +166,4 @@ Here, `Game::Scores` is a `std::map<std::uint64_t, std::string>`.
 
 # Events
 
-In order to comply with all render engines, it's recommended to make your games fully playable (including menus) with the keyboard.
+In order to comply with all render engines, it's recommended to make your games fully playable (including menus) with the keyboard. Indeed, some render engines may not implement joystick or mouse handling.
