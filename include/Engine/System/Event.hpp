@@ -63,6 +63,7 @@ namespace engine
 	{
 		KeyCode code;
 
+		// Are those keys also pressed?
 		bool alt;
 		bool control;
 		bool shift;
@@ -133,6 +134,11 @@ namespace engine
 			// Joystick
 			JoystickButtonEvent joystickButton;
 			JoystickMoveEvent joystickMove;
+
+			// Mouse
+			MouseButtonEvent mouseButton;
+			MouseMoveEvent mouseMove;
+			MouseWheelEvent mouseWheel;
 
 			// Keyboard
 			KeyEvent key;
