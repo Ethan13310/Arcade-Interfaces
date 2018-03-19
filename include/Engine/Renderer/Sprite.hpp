@@ -45,9 +45,9 @@ namespace engine
 
 		/**
 		 * \brief Set the sprite size.
-		 * \param std::size_t size
+		 * \param Vector2f size
 		 */
-		void setSize(std::size_t size);
+		void setSize(Vector2f const &size);
 
 		/**
 		* \brief Set the sprite rotation.
@@ -69,9 +69,9 @@ namespace engine
 
 		/**
 		 * \brief Get the sprite size.
-		 * \return std::size_t
+		 * \return Vector2f
 		 */
-		std::size_t getSize() const;
+		Vector2f const &getSize() const;
 
 		/**
 		* \brief Get the sprite rotation.
