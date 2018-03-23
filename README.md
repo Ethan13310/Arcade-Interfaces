@@ -162,7 +162,7 @@ scores = game->highscores();
 // Then save them
 ```
 
-Here, `Game::Scores` is a `std::map<std::uint64_t, std::string>`.
+Here, `Game::Scores` is a `std::multimap<std::uint64_t, std::string>`.
 
 # Events
 
