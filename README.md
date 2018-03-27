@@ -81,7 +81,7 @@ Now, things are going to get a little bit more harder. We need to make the `Wind
 
 ### The render target
 
-The render target is basically the engine you will use to render objects to the screen (SFML, nCurses, OpenGL, etc.). The implementation of the `RenderTarget` class is up to you, but let's see one possible implementation :
+The render target is basically the engine you will use to render objects to the screen (SFML, nCurses, OpenGL, etc.) :
 
 ```cpp
 class RenderTarget
