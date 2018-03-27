@@ -60,13 +60,13 @@ namespace engine
 		 * \brief Get the text value
 		 * \return std::string
 		 */
-		std::size_t const &getText() const;
+		std::string const &getText() const;
 
 		/**
 		 * \brief Get the font path.
 		 * \return std::string
 		 */
-		std::size_t const &getFont() const;
+		std::string const &getFont() const;
 
 		/**
 		 * \brief Get the text size.
